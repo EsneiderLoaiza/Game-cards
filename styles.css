@@ -11,7 +11,15 @@ body{
     padding: 0;
     -webkit-perspective: 1000; /*Efecto 3D*/
     background-color: #EBEAEB;
-    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+div{
+
 }
 :root{
     --ancho: calc(70vw / 6);
@@ -28,12 +36,12 @@ body{
     background-image: url(IES.png);
 }
 h1{
-    text-align: center;
+    display: inline-block;
 }
 .centro{
     
 }
-.game{
+#game{
     height: 700px;
     width: 700px;
     border: 2px solid black;
@@ -55,10 +63,10 @@ h1{
     position: absolute; /*para que cada cara este una encima de la otra*/
     backface-visibility: hidden;/*Oculta cara de atras de cada una de las caras*/
     box-shadow: inset 0 0 0 5px #007ACC;/*Que no tenga translación en X ni Y, ni degradado pero tendrá grosor de 5px*/
-    font-size: 300%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 600%;
 }
 .trasera{
     
@@ -76,5 +84,12 @@ h1{
     align-items: center;
     justify-content: center;
 }
+.nuevo-juego{
+    background-color: #080b38;
+    padding: 5px;
+    border-radius: 50px;
+    border: white 5px solid;
+}
+
 
 
