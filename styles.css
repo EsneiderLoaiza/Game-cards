@@ -1,0 +1,80 @@
+*{
+    transition: all 0.5s;
+}
+html{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+    -webkit-perspective: 1000; /*Efecto 3D*/
+    background-color: #EBEAEB;
+    
+}
+:root{
+    --ancho: calc(70vw / 6);
+    --alto: calc(70vh / 4);  
+}
+.barra-superior{   
+    margin:0%;
+    background-color: #080b38;
+    padding-right: 100%;
+}
+.imagen{
+    padding: 33px 68px;
+    margin-left: 60px;
+    background-image: url(IES.png);
+}
+h1{
+    text-align: center;
+}
+.centro{
+    
+}
+.game{
+    height: 700px;
+    width: 700px;
+    border: 2px solid black;
+    margin: auto;
+}
+.area-tarjeta, .tarjeta, .cara{
+    width: var(--ancho);
+    height: var(--alto);
+    min-width: 40px;
+}
+.tarjeta{
+    position: relative; /*para que cada cara este una encima de la otra*/
+    transform-style: preserve-3d; /*para que la tarjeta pueda mostrar la cara de atrás y adelante*/
+}
+.area-tarjeta:hover .tarjeta{
+    transform: rotateY(180deg); /*Ver efecto de tarjeta cuando este el mouse encima(rota 180°)*/
+}
+.cara{
+    position: absolute; /*para que cada cara este una encima de la otra*/
+    backface-visibility: hidden;/*Oculta cara de atras de cada una de las caras*/
+    box-shadow: inset 0 0 0 5px #007ACC;/*Que no tenga translación en X ni Y, ni degradado pero tendrá grosor de 5px*/
+    font-size: 300%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trasera{
+    
+    background-color: #080b38;
+    
+}
+.superior{
+    background-color: #FFFFFF;
+    transform: rotateY(180deg); /*Se indica que la rotación con eje Y sera de 180°*/
+
+}
+.icono-superior{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
