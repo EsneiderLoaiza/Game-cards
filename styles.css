@@ -12,42 +12,46 @@ body{
     -webkit-perspective: 1000; /*Efecto 3D*/
     background-color: #EBEAEB;
     min-height: 100vh;
-    display: flex;
+    /*display: flex;*/ /*Afecta barra superior*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
 }
-div{
-
+div{   
+    display: inline-block;
+}
+.gaming{
+    display: block;
 }
 :root{
     --ancho: calc(70vw / 6);
     --alto: calc(70vh / 4);  
 }
 .barra-superior{   
-    margin:0%;
+    width: 100%;
     background-color: #080b38;
-    padding-right: 100%;
+
 }
 .imagen{
     padding: 33px 68px;
-    margin-left: 60px;
     background-image: url(IES.png);
-}
-h1{
-    display: inline-block;
+    float: left;
+    margin-left: 50px;
+    
 }
 .centro{
     
 }
 #game{
-    height: 700px;
-    width: 700px;
+    height: auto;
+    width: 685px;
     border: 2px solid black;
     margin: auto;
 }
 .area-tarjeta, .tarjeta, .cara{
+    cursor: pointer;
     width: var(--ancho);
     height: var(--alto);
     min-width: 40px;
@@ -55,10 +59,9 @@ h1{
 .tarjeta{
     position: relative; /*para que cada cara este una encima de la otra*/
     transform-style: preserve-3d; /*para que la tarjeta pueda mostrar la cara de atrás y adelante*/
+    animation: iniciar 1s;
 }
-.area-tarjeta:hover .tarjeta{
-    transform: rotateY(180deg); /*Ver efecto de tarjeta cuando este el mouse encima(rota 180°)*/
-}
+
 .cara{
     position: absolute; /*para que cada cara este una encima de la otra*/
     backface-visibility: hidden;/*Oculta cara de atras de cada una de las caras*/
@@ -85,10 +88,21 @@ h1{
     justify-content: center;
 }
 .nuevo-juego{
+    cursor: pointer;
     background-color: #080b38;
     padding: 5px;
     border-radius: 50px;
     border: white 5px solid;
+    color: white    ;
+}
+/*Animación para que se gire la carta al inicio*/
+@keyframes iniciar{
+    20%, 90%{
+        transform: rotateY(180deg);
+    }
+    0%, 100%{
+        transform: rotateY(0deg)
+    }
 }
 
 
