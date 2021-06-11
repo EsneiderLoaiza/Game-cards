@@ -90,10 +90,11 @@ div{
 .nuevo-juego{
     cursor: pointer;
     background-color: #080b38;
-    padding: 5px;
+    padding: 15px;
+    margin-top: 30px;
     border-radius: 50px;
     border: white 5px solid;
-    color: white    ;
+    color: white;
 }
 /*Animación para que se gire la carta al inicio*/
 @keyframes iniciar{
